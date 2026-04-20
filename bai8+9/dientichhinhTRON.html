@@ -1,0 +1,21 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dientichhinhtron</title>
+ </head>
+ <body>
+    <input type="number" id="r" placeholder="Nhập vào bán kính(r)" min="1"/>
+    <h5>Đơn vị: Cm</h5>
+    <button type="button" onclick="tinh()">Tính</button>
+    <h4 id="ketqua">Diện tích hình tròn là:</h4>
+    <script>
+        function tinh() {
+            let r = Number(document.getElementById('r').value);
+            let S = Math.PI * ( r * r );
+            document.getElementById('ketqua').innerText = "Diện tích hình tròn là: " + S + " Cm";
+        }
+    </script>
+ </body>
+ </html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chuyendoCsangF</title>
+</head>
+<body>
+    <form>
+        <input type="number" id="C" placeholder="Nhập độ C (Celsius)"/>
+        <button type="button" onclick="nhap()">Nhập</button>
+        <h4 id="ketqua">Kết quả:</h4>
+    </form>     
+    <script>
+        function nhap() {
+            let C = Number(document.getElementById('C').value);
+            let F = (9 / 5) * C + 32;
+            document.getElementById('ketqua').innerText = "Kết quả: " + F + " độ F";
+        }
+    </script>
+</body>
+</html>

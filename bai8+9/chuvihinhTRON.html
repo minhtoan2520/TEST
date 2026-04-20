@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chuvihinhTRON</title>
+</head>
+<body>
+    <input type="number" id="d" min="1" placeholder="Nhập vào đường kính (d)"/>
+    <h5>Đơn vị: Cm</h5>
+    <button type="button" onclick="tinh()">Tính chu vi</button>
+    <h4 id="ketqua">Chu vi hình tròn là:</h4>
+    <script>
+        function tinh() {
+            let d = Number(document.getElementById('d').value);
+            let C = d * Math.PI;
+            document.getElementById('ketqua').innerText = "Chu vi hình tròn là " + C + " Cm";
+        }
+    </script>
+</body>
+</html>
