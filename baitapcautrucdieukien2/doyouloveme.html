@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>doyouloveme?</title>
+</head>
+<body>
+    <h1>DO YOU LOVE ME?</h1>
+    <br>
+    <button type="button" onclick="yes()">Yes</button>
+    <button type="button" id="no" onmouseover="no()">No</button>
+    <script>
+        
+        function yes() {
+            alert("<3");
+        }
+        function no() {
+            let no = document.getElementById('no');
+            let height = window.innerHeight;
+            let width = window.innerWidth;
+            let x = Math.random() * 90;
+            let y = Math.random() * 90;
+            no.style.position = "absolute";
+            no.style.top = x + "%";
+            no.style.left = y + "%";
+            console.log(width);
+        }
+    </script>
+</body>
+</html>

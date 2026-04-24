@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkngay(month) {
+            let t = Number(month);
+            if (t==2){
+                console.log("28 or 29 days");
+            } else if (t==4 || t==6 || t==9 || t==11){
+                console.log("30 days");
+            } else if (t==1 || t==3 || t==5 || t==7 || t==8 || t==10 || t==12){
+                console.log("31day");
+            }
+            else
+                console.log("nhap sai") 
+        }
+    checkngay();
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chỉ số cân nặng của cơ thể</title>
+</head>
+<body>
+    <h1>Tính chỉ số cân nặng của cơ thể</h1>
+    <form>
+        Nhập vào cân nặng: <input id="cannang" type="number" min="1"/>Đơn vị: kg<br><br>
+        Nhập vào chiều cao: <input id="chieucao" type="number" min="1"/>Đơn vị: m<br><br>
+        <button type="button" onclick="kiemtra()">Kiểm tra</button>
+        <br>
+        <h2 id="ketqua">Kết quả:</h2>
+    </form>
+    <script>
+        function kiemtra() {
+            let cannang = Number(document.getElementById('cannang').value);
+            let chieucao = Number(document.getElementById('chieucao').value);
+            let BMI = cannang / ( chieucao ** 2 );
+            if (BMI < 18.5){
+                kq = "Kết quả chỉ số BMI là " + BMI.toFixed(1) + " => Bạn đang thiếu cân"
+            } else if (BMI >= 18.5 && BMI < 25.0){
+                kq = "Kết quả chỉ số BMI là " + BMI.toFixed(1) + " => Bạn đang bình thường"
+            } else if (BMI >= 25.0 && BMI <30.0){
+                kq = "Kết quả chỉ số BMI là " + BMI.toFixed(1) + " => Bạn đang thừa cân"
+            } else {
+                kq = "Kết quả chỉ số BMI là " + BMI.toFixed(1) + " => Bạn đang béo phì"
+            }
+            document.getElementById('ketqua').innerHTML = kq;
+        }
+    </script>
+</body>
+</html>
