@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đơn vị met sang feet</title>
+</head>
+<body>
+    <input type="number" id="met" placeholder="Nhập vào độ dài (m)"/> Đơn vị: mét
+    <br><br>
+    <input type="button" onclick="doi()" value="Đổi"/>
+    <br>
+    <h4 id="kq">Kết quả:</h4>
+    <script>
+        function doi() {
+            let a = Number(document.getElementById('met').value);
+            let ft = a * 3.2808;
+            document.getElementById('kq').innerHTML = ("Kết quả:" + ft.toFixed(4) + " feet");
+        }
+    </script>
+</body>
+</html>

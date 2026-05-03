@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diện tích hình vuông</title>
+</head>
+<body>
+    <input type="number" id="a" placeholder="Nhập vào độ dài cạnh a"/> Đơn vị: cm
+    <br><br>
+    <input type="button" onclick="tinh()" value="Tính"/>
+    <h4 id="kq">Kết quả:</h4>
+    <script>
+        function tinh(){
+            let a = parseFloat(document.getElementById('a').value);
+            if (isNaN(a)){
+                alert("Vui lòng nhập vào giá trị");
+                return;
+            }
+            let s = a * a;
+            document.getElementById('kq').innerHTML = ("Kết quả: Diện tích hình vuông là " + s + " cm")
+        }
+    </script>
+</body>
+</html>

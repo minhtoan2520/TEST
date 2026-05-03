@@ -19,7 +19,7 @@
             let cannang = Number(document.getElementById('cannang').value);
             let chieucao = Number(document.getElementById('chieucao').value);
             let BMI = cannang / ((chieucao / 100) ** 2 );
-            let kq;
+            let kq = "";
             if (!cannang || !chieucao || cannang && chieucao == 0){
                 kq = "Vui lòng nhập đúng giá trị!"
             } else if (BMI < 18.5){

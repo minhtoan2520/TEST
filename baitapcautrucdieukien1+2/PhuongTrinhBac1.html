@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phương trình bậc 1</title>
+</head>
+<body>
+    <h3>Phương trình bậc 1 (ax + b = 0)</h3>
+    <br>
+    <input type="number" id="a" placeholder="Nhập vào số a"/>
+    <br><br>
+    <input type="number" id="b" placeholder="Nhập vào số b"/>
+    <br><br>
+    <input type="button" onclick="check()" value="check"/>
+    <br>
+    <h4 id="kq">Kết quả:</h4>
+    <script>
+        function check(){
+            let a = parseFloat(document.getElementById('a').value);
+            let b = parseFloat(document.getElementById('b').value);
+            let kq = "";
+            if (isNaN(a) || isNaN(b)){
+                alert("Vui lòng nhập vào giá trị")
+                return;
+            } else if (a === 0 && b === 0){
+                kq = "Kết quả: Phương trình vô số nghiệm"
+            } else if (a === 0 && b !== 0){
+                kq = "Kết quả: Phương trình vô nghiệm"
+            } else {
+                let x = -b / a;
+                    kq = "Kết quả: Phương trình có nghiệm x = " + x;
+            }
+            document.getElementById('kq').innerHTML = kq;
+        }   
+    </script>
+</body>
+</html>
