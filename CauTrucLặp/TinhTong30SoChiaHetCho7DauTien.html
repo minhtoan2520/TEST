@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function chia7(number) {
+            if (number % 7 == 0){
+                return true;
+            }
+            return false;
+        }
+        function cacsochia7dautien(number){
+            let count = 0;
+            let n = 1;
+            let str = "";
+            let tong = 0;
+            while(count < number){
+                if(chia7(n)){
+                    str = str + n + ", ";
+                    count++;
+                    tong = tong + n;
+                }
+                n++;
+            }
+            document.write(str);
+            document.write("Tổng = " + tong);
+        }
+        cacsochia7dautien(30);
+    </script>
+</body>
+</html>

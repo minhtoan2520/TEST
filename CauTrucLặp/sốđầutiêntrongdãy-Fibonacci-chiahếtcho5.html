@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fibonacci(number){
+            let a = 0;
+            let b = 1;
+            let count = 0;
+            let c = 0;
+            while(count < number){
+                c = a + b;
+                a = b;
+                b = c;
+                count++;
+            } return a;
+        }
+        function sodautienchiahetcho5(number){
+            let i = 0;
+            while(true){
+                let chia5 = fibonacci(i);
+                if(chia5 % 5 == 0 && chia5 != 0){   
+                    document.write("Số Finacci đầu tiên chia hết cho 5 là: " + chia5); 
+                    break;
+                } 
+                i++;
+            }  
+        }
+        sodautienchiahetcho5();
+    </script>
+</body>
+</html>

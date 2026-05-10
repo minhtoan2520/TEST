@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fibonacci(number){
+            let count = 0;
+            let c = 0;
+            let a = 0;
+            let b = 1;
+            let tong = a + b;
+            document.write(a + ", " + b + ", ");
+            while(count < number - 2){
+                c = a + b;
+                a = b;
+                b = c;
+                count++;
+                tong += c;
+                document.write(c + ", ");
+            }document.write("Tổng 20 số Fibonacci là: " + tong);
+        }
+        fibonacci(20);
+    </script>
+</body>
+</html>

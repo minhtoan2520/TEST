@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>random-number</title>
+</head>
+<body>
+    <button type="button" onclick="choi()">Chơi</button>
+    <script>
+        function choi(){
+            let a = +prompt("Nhập vào số ngẫu nhiên a");
+            let b = +prompt("Nhập vào số ngẫu nhiên b");
+            let max, min;
+            if(a > b){
+                max = a;
+                min = b;
+            }else if(b > a){
+                max = b;
+                min = a;
+            }else{
+                alert("Vui lòng nhập 2 số khác nhau");
+                return;
+            }
+            let random = Math.floor(Math.random() * (max - min + 1)) + min;
+            
+            let dathang = false;
+            for (let i = 1; i <= 3; i++){
+                let dudoan = Number(prompt("Lần " + i + ": Nhập vào số mà bạn dự đoán"));
+                if(dudoan === null){
+                    alert("Đã thoát trò chơi");
+                    return;
+                }
+                if(dudoan === random){
+                    alert("Chúc mừng bạn đã đoán trúng số " + random);
+                    dathang = true;
+                    break;
+                } else if(dudoan > random){
+                    alert("Số bạn nhập lớn hơn, vui lòng chọn lại");
+                } else{
+                    alert("Số bạn nhập nhỏ hơn, vui lòng chọn lại");
+                }    
+            }
+            if(!dathang){
+                alert("Bạn đã hết lượt thử, số đúng là: " + random);
+            }
+        }
+        choi();
+    </script>
+</body>
+</html>
