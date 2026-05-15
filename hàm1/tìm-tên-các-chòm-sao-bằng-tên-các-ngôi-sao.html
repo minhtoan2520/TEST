@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body></body>
+<script>
+    let a = prompt("Nhập tên ngôi sao (Polaris, Aldebaran, Deneb, Vega, Altair, Dubhe, Regulus)");
+    let arr = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let str = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    function chomsao(a){
+        for(let i = 0; i <= arr.length - 1; i++){
+            if(a == arr[i]){
+                alert("Chòm sao tương ứng với ngôi sao " + arr[i] + " là: " + str[i]);
+                return;
+            }
+        }if (a != arr){
+            alert("Vui lòng nhập đúng tên các vì sao");
+            return;
+        }
+    }
+    chomsao(a);
+</script>
+</html>

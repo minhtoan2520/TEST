@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input1" type="number" placeholder="Nhập số Meter muốn đổi">(m)
+    <button type="button" onclick="feetToMeter()">Đổi</button>
+    <h4 id="kq1">Kết quả:</h4>
+    <hr><br>
+    <input id="input2" type="number" placeholder="Nhập số Feet muốn đổi">(ft)
+    <button type="button" onclick="meterToFeet()">Đổi</button>
+    <h4 id="kq2">Kết quả:</h4>
+    <script>
+        function feetToMeter(){
+            let a = document.getElementById("input1").value;
+            let feet = 3.279 * a;
+            document.getElementById("kq1").innerHTML = "Kết quả: " + feet + " feet";
+        }
+        function meterToFeet(){
+            let b = document.getElementById("input2").value;
+            let meter = 0.305 * b;
+            document.getElementById("kq2").innerHTML = "Kết quả: " + meter + " meter";
+        }
+    </script>
+</body>
+</html>

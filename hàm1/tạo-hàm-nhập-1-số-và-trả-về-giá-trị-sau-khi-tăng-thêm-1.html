@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="a" type="number" placeholder="Nhập vào số bất kỳ">
+    <button type="button" onclick="tang1()">Click</button>
+</body>
+<script>
+    function tang1(){
+        let b = +document.getElementById("a").value;
+        let kq = b + 1;
+        alert("Giá trị sau khi tăng là: " + kq);
+        return kq;
+    }
+</script>
+</html>

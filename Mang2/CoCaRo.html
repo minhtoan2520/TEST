@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caro Game</title>
+</head>
+<body>
+    <style>
+        td{
+            width: 40px;
+            height: 40px;
+        }
+        table{
+            border-collapse: collapse;
+            margin-top: 20px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+        }
+    </style>
+    <input type="text" id="ngang" placeholder="Nhập số ô ngang" value="10">
+    <input type="text" id="doc" placeholder="Nhập số ô dọc" value="10">
+    <button id="ok" onclick="taobanco()">Tạo bàn cờ</button>
+    <table id="caro" border="1" cellspacing="0"></table>
+    <script>
+        const PLAY_X = "X";
+        const PLAY_O = "O";
+        let turn = PLAY_X;
+        let board = [];
+        let banco = document.getElementById("caro");
+        
+        function taobanco(){
+            let ngang = +document.getElementById("ngang").value;
+            let doc = +document.getElementById("doc").value;
+            let str = "";
+            for(let i = 0; i < ngang; i++){
+                board[i] = [];
+                str += "<tr>";
+                for(let j = 0; j < doc; j++){
+                    board[i][j] = "";
+                    str += `<td id="cell-${j}-${i}" onclick=clickcell(this)></td>`;
+                }
+                str += "</tr>";
+            }
+            banco.innerHTML = str;
+            console.log(board);
+        }
+        taobanco();
+
+        function clickcell(cell){
+            let toado = cell.id.split("-");
+            let x = +toado[1];
+            let y = +toado[2];
+            console.log(x, y);
+            console.log(toado);
+            if(turn == PLAY_X){
+                cell.innerHTML = PLAY_X;
+                cell.style.color = "blue";
+                turn = PLAY_O;
+            } else{
+                cell.innerHTML = PLAY_O;
+                cell.style.color = "red";
+                turn = PLAY_X;
+            }
+            console.log(board);
+            checkwin(x, y);
+        }
+
+        function checkwin(x, y){
+            console.log("check win: "+ x + "-" + y);
+            // check row + col
+            let countngang = 1;
+            console.log(laygiatritoado(+x + 1, +y, laygiatritoado(+x + 1, +y)));
+            let i1 = 1;
+            while(laygiatritoado(+x + i1, +y) == laygiatritoado(x, y)){
+                countngang++;
+                i1++;
+                console.log(+x + i1, +y, laygiatritoado(+x + i1, +y));
+            }
+            let i2 = 1;
+            while(laygiatritoado(+x - i2, +y) == laygiatritoado(x, y)){
+                countngang++;
+                i2++;
+            }
+            if(countngang >= 4){
+                if(laygiatritoado(x, y) == "X"){
+                    alert("X win");
+                } else{
+                    alert("O win");
+                }
+                return;
+            }
+            //check dọc
+            let countdoc = 1;
+            let i3 = 1;
+            while(laygiatritoado(+x, +y + i3) == laygiatritoado(x, y)){
+                countdoc++;
+                i3++;
+            }
+            let i4 = 1;
+            while(laygiatritoado(+x, +y - i4) == laygiatritoado(x, y)){
+                countdoc++;
+                i4++;
+            }
+            if(countdoc >= 4){
+                if(laygiatritoado(x, y) == "X"){
+                    alert("X win");
+                } else{
+                    alert("O win");
+                }
+                return;
+            }
+            //check chéo
+            let countcheo1 = 1;
+            let countcheo2 = 1;
+            let c1 = 1;
+            while(laygiatritoado(+x - c1, +y - c1) == laygiatritoado(x, y)){
+                countcheo1++;
+                c1++;
+            }
+            while(laygiatritoado(+x + c1, +y + c1) == laygiatritoado(x, y)){
+                countcheo1++;
+                c1++;
+            }
+            if(countcheo1 >= 4){
+                if(laygiatritoado(x, y) == "X"){
+                    alert("X win");
+                } else{
+                    alert("O win");
+                }
+                return;
+            }
+            let c2 = 1;
+            while(laygiatritoado(+x + c2, +y - c2) == laygiatritoado(x, y)){
+                countcheo2++;
+                c2++;
+            }
+            while(laygiatritoado(+x - c2, +y + c2) == laygiatritoado(x, y)){
+                countcheo2++;
+                c2++;
+            }
+            if(countcheo2 >= 4){
+                if(laygiatritoado(x, y) == "X"){
+                    alert("X win");
+                } else{
+                    alert("O win");
+                }
+                return;
+            }
+        }
+
+        function laygiatritoado(x, y){
+            let id = "cell-" + x + "-" + y;
+            let cellvalue = document.getElementById(id);
+            if(cellvalue === null) return null;
+            return cellvalue.innerHTML;
+        }
+        
+    </script>
+</body>
+</html>

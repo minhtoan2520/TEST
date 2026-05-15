@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faking text area</title>
+</head>
+<body>
+    <textarea id="ketqua"></textarea>
+    <script>
+        let str = "Tôi là một con lợn";
+        let arr = str.split("");
+        console.log(arr);
+        let count = 0;
+        window.addEventListener("keydown",checkkeydown)
+        function checkkeydown(evt){
+            if(count == arr.length){
+                alert("Đã hiển thị hết");
+                return;
+            }
+            count++;
+            let str = "";
+            for (let i = 0; i < count; i++){
+                str += arr[i] + "";
+            }
+            document.getElementById("ketqua").value = str;
+        }
+    </script>
+</body>
+</html>

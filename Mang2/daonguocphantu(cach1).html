@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đảo ngược phần tử</title>
+</head>
+<body>
+    <script>
+        let arr = prompt("Nhập số ngăn cách nhau bằng dấu phẩy(,)").split(",");
+        function daonguocmang(arr){
+            let output = [];
+            for(let i = arr.length - 1; i >= 0; i--){;
+                output.push(arr[i]);
+            } alert("Sau khi đảo ngược: " + output);
+        }
+        daonguocmang(arr);
+    </script>
+</body>
+</html>
